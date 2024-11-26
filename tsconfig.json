@@ -1,3 +1,24 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowImportingTsExtensions": false,
+    "module": "esnext",
+    "skipLibCheck": true,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "__tests__/**/*",
+    "./src/**/*",
+    "index.d.ts",
+    "declarations.d.ts",
+    "jest.config.js",
+    "babel.config.js",
+    "react-native.config.js",
+    "index.js",
+  ],
+  "exclude": ["node_modules", "_", "android", "ios"]
 }
