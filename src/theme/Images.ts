@@ -1,11 +1,11 @@
-/**
- *
- * @param Theme can be spread like {Colors, NavigationColors, Gutters, Layout, Common, ...args}
- * @return {*}
- */
-export default function () {
-    return {
-      Iera: require('./assets/images/iera.png'),
-    }
+interface AssetType {
+  Iera: any
+  Background: any
+}
+
+export default function (): AssetType {
+  return {
+    Iera: require('./assets/images/iera.png'),
+    Background: require('./assets/images/background.jpg'),
   }
-  
+}

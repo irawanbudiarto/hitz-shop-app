@@ -1,14 +1,14 @@
 import { CommonActions, useNavigation } from '@react-navigation/native'
 import React, { useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import { AppearanceColors, AppearanceFonts } from '@/theme/_config'
-
-import { CustomStatusBar } from '@/components/molecules'
-import { ILogoHs } from '@/theme/Illustrations'
+import { Hitzshop } from '@/theme/Illustrations'
+import getAssets from '@/theme/Images'
 
 const StartupScreen: React.FC = () => {
   const navigation = useNavigation()
+  const assets = getAssets()
 
   const init = async () => {
     await new Promise((resolve) =>
@@ -29,18 +29,23 @@ const StartupScreen: React.FC = () => {
   })
 
   return (
-    <View style={styles.container}>
-      <CustomStatusBar
-        backgroundColor={AppearanceColors.white}
-        barStyle={'dark-content'}
-      />
-      <View style={styles.content}>
-        <ILogoHs/>
-      </View>
-      <View style={styles.version}>
-        <Text style={styles.textVersion}>Version {process.env.APP_VERSION}</Text>
-      </View>
-    </View>
+    <>
+      <ImageBackground
+        style={styles.imageBackground}
+        resizeMode="cover"
+        source={assets.Background}
+      >
+        <View style={styles.content}>
+          <Hitzshop />
+        </View>
+        <View style={styles.version}>
+          <Text style={styles.textVersion}>
+            Version {process.env.APP_VERSION}
+          </Text>
+          <Text style={styles.copyright}>Copyright © 2024</Text>
+        </View>
+      </ImageBackground>
+    </>
   )
 }
 
@@ -56,18 +61,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textWelcome: {
-    fontFamily: AppearanceFonts.primary.bold,
-    fontSize: 16,
-    color: AppearanceColors.text.primary,
+  imageBackground: {
+    flex: 1,
   },
   version: {
-    paddingBottom: 60
+    position: 'absolute',
+    bottom: 60,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    right: 0,
+    top: 0,
+    left: 0,
   },
   textVersion: {
     fontFamily: AppearanceFonts.primary.normal,
     fontSize: 14,
-    color: AppearanceColors.border,
-    textAlign: 'center'
-  }
+    color: AppearanceColors.white,
+  },
+  copyright: {
+    fontFamily: AppearanceFonts.primary.normal,
+    fontSize: 14,
+    color: AppearanceColors.white,
+  },
 })

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hs-splash-1.png",
+      "filename" : "Hitzshop.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "hs-splash-2.png",
+      "filename" : "Hitzshop 1.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "hs-splash-3.png",
+      "filename" : "Hitzshop 2.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }
