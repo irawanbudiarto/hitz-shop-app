@@ -15,12 +15,12 @@ const InitialScreen: React.FC = () => {
         resolve(true)
       }, 2000)
     )
-    navigation.dispatch(
-      CommonActions.reset({
-        index: 0,
-        routes: [{ name: 'Main' }],
-      })
-    )
+    // navigation.dispatch(
+    //   CommonActions.reset({
+    //     index: 0,
+    //     routes: [{ name: 'Main' }],
+    //   })
+    // )
   }
 
   useEffect(() => {
